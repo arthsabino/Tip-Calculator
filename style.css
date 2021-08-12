@@ -1,0 +1,121 @@
+@import url('https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&display=swap');
+
+:root {
+    --font-size: 24px;
+    --mobile-width: 375px;
+    --desktop-width: 1440px;
+    --strong-cyan: hsl(172, 67%, 45%);
+    --very-dark-cyan: hsl(183, 100%, 15%);
+    --dark-grayish-cyan1: hsl(186, 14%, 43%);
+    --dark-grayish-cyan2: hsl(184, 14%, 56%);
+    --light-grayish-cyan1: hsl(185, 41%, 84%);
+    --light-grayish-cyan2: hsl(189, 41%, 97%);
+    --white: hsl(0, 0%, 100%);
+    
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Space Mono', monospace;
+    font-size: var(--font-size);
+}
+
+body {
+    background-color: var(--light-grayish-cyan1);
+    font-weight: 700;
+    color: var(--very-dark-cyan);
+}
+
+.container {
+    height: auto;
+    margin: 0 auto;
+}
+
+.card-container {
+    width: var(--desktop-width);
+}
+
+
+.flex-container {
+    display: flex;
+}
+
+.flex-container > div {
+    flex: 1;
+    padding: 0 1em;
+}
+
+
+.clear {
+    clear: both;
+}
+h1 {
+    text-align: center;
+    text-transform: uppercase;
+}
+
+label {
+    font-size: 16px;
+}
+.card {
+    background-color: var(--white);
+    border-radius: 15px;
+}
+
+.card-body {
+    padding: 1em;
+}
+
+.form-group input {
+    display: block;
+    width: 100%;
+    border: none;
+    border-radius: 10px;
+    text-align: end;
+    background-color: var(--light-grayish-cyan2);
+    font-weight: 900;
+    color: var(--dark-grayish-cyan1);
+    padding: 0.3em;
+}
+
+.input-container img {
+    position: absolute;
+    color: var(--dark-grayish-cyan1);  
+    font-weight: 400;
+}
+
+.input-icon {
+    padding: 0.7em;
+}
+
+.button-container {
+}
+
+.button-container > button {    
+    
+}
+
+.btn {
+    border: none;
+    vertical-align: middle;
+    text-align: center;
+}
+
+.btn-green {
+    background-color: var(--very-dark-cyan);
+    color: var(--white);
+    font-weight: 700;;
+}
+
+.btn-tip-pct {
+    border-radius: 5px;
+    padding: 1em 3em;
+}
+
+/* bill total */
+.bill-total {
+    background-color: var(--very-dark-cyan);
+    border-radius: 15px;
+}
