@@ -6,6 +6,7 @@
 
     <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
     <link rel="stylesheet" href="style.css">
+    <script src="script.js"></script>
     <title>Frontend Mentor | Tip calculator app</title>
 
     <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
@@ -16,52 +17,83 @@
   </head>
   <body>
     <div class="container card-container">
-      <h1 class="calculator-header">Splitter</h1>
+      <h1 class="calculator-header">
+        <span>
+          Spli
+        </span>
+        <span>
+          tter
+        </span>
+      </h1>
       <div class="card">
         <div class="card-body flex-container">
           <div class="bill-computation">
             <div class="form-group">
-              <label for="bill-input">Bill</label>
+              <div class="flex-container label-container">
+                <label for="bill-input">Bill</label>
+                <label class="input-error-message" for="bill-input-error">Can't be zero</label>
+              </div>
               <div class="input-container">
                 <img class="input-icon" src="images/icon-dollar.svg">
-                <input class="bill-input" type="number" value="0">
+                <input class="bill-input form-input" type="number" placeholder="0">
               </div>
             </div>
             <div class="form-group">
-              <label for="select-tip">Select Tip %</label>
+              <div class="flex-container label-container">
+                <label for="select-tip">Select Tip %</label>
+                <label class="input-error-message" for="bill-input-error">Can't be zero</label>
+              </div>
               <div class="button-container grid-container">
-                <button class="btn btn-tip-pct btn-green" type="button">5%</button>
-                <button class="btn btn-tip-pct btn-green" type="button">10%</button>
-                <button class="btn btn-tip-pct btn-green" type="button">15%</button>
-                <button class="btn btn-tip-pct btn-green" type="button">25%</button>
-                <button class="btn btn-tip-pct btn-green" type="button">50%</button>
-                <button class="btn btn-tip-pct btn-green" type="button">Custom</button>
-                
+                <button class="btn btn-tip-pct btn-green" type="button" data-value="5">5%</button>
+                <button class="btn btn-tip-pct btn-green" type="button" data-value="10">10%</button>
+                <button class="btn btn-tip-pct btn-green" type="button" data-value="15">15%</button>
+                <button class="btn btn-tip-pct btn-green" type="button" data-value="25">25%</button>
+                <button class="btn btn-tip-pct btn-green" type="button" data-value="50">50%</button>
+                <input class="btn btn-tip-pct btn-dull custom-tip" type="number" placeholder="Custom">
               </div>
             </div>
             <div class="form-group">
-              <label for="number-of-people">Number of People</label>
+              <div class="flex-container label-container">
+                <label for="number-of-people">Number of People</label>
+                <label class="input-error-message" for="bill-input-error">Can't be zero</label>
+              </div>
               <div class="input-container">
                 <img class="input-icon" src="images/icon-person.svg">
               </div>
-              <input class="number-of-people" type="number" value="0">
+              <input class="form-input number-of-people" type="number" placeholder="0">
             </div>
           </div>
           <div class="bill-total">
-            Tip Amount
-            / person
-
-            Total
-            / person
-
-            Reset
+            <div class="container bill-total-container">
+              <div class="flex-container amount-container">
+                <div class="tip-amount-label-container label-container">
+                  <span>Tip Amount</span>
+                  <span>/ person</span>
+                </div>
+                <div class="tip-amount-per-person-container">
+                  <h2 class="tip-amount-per-person">$0.00</h2>
+                </div>
+              </div>
+              <div class="flex-container amount-container">
+                <div class="total-amount-label-container label-container">
+                  <span>Total</span>
+                  <span>/ person</span>
+                </div>
+                <div class="total-amount-per-person-container">
+                  <h2 class="total-amount-per-person">$0.00</h2>
+                </div>
+              </div>
+              <div class="button-reset-container">
+                <button class="btn btn-reset">Reset</button>
+              </div>
+            </div>
           </div>
         </div>
       </div>
     </div>
     <div class="attribution">
       Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
-      Coded by <a href="#">Your Name Here</a>.
+      Coded by <a href="#">arthjosephsabino</a>.
     </div>
   </body>
 </html>

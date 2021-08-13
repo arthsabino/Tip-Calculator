@@ -10,6 +10,7 @@
     --dark-grayish-cyan2: hsl(184, 14%, 56%);
     --light-grayish-cyan1: hsl(185, 41%, 84%);
     --light-grayish-cyan2: hsl(189, 41%, 97%);
+    --orange-brown: hsl(28, 83%, 52%);
     --white: hsl(0, 0%, 100%);
     
 }
@@ -35,25 +36,43 @@ body {
 
 .card-container {
     width: var(--desktop-width);
+    padding: 4em 0;
 }
 
+.grid-container {
+    display: grid;
+    grid-template-columns: repeat(3, 31.5%);
+    row-gap: 15px;
+    column-gap: 15px;
+}
 
 .flex-container {
     display: flex;
 }
 
-.flex-container > div {
+.card-body.flex-container > div {
     flex: 1;
-    padding: 0 1em;
+    margin: 0 1.5em;
+    padding: 0 0.5em;
 }
 
+.bill-total-container {
+    width: 580px;
+}
 
-.clear {
-    clear: both;
+.input-error-message {
+    display: none;
+    color: var(--orange-brown);
 }
 h1 {
     text-align: center;
     text-transform: uppercase;
+}
+
+h1.calculator-header span {
+    display: block;
+    line-height: 1.5;
+    letter-spacing: 10px;
 }
 
 label {
@@ -62,6 +81,7 @@ label {
 .card {
     background-color: var(--white);
     border-radius: 15px;
+    margin-top: 3em;
 }
 
 .card-body {
@@ -77,7 +97,12 @@ label {
     background-color: var(--light-grayish-cyan2);
     font-weight: 900;
     color: var(--dark-grayish-cyan1);
-    padding: 0.3em;
+    padding: 0.3em 1em 0.3em 0.3em;
+}
+
+.form-group input:focus {
+    outline: none;
+    border: 2px solid var(--strong-cyan);
 }
 
 .input-container img {
@@ -90,32 +115,130 @@ label {
     padding: 0.7em;
 }
 
-.button-container {
-}
-
-.button-container > button {    
-    
-}
-
 .btn {
     border: none;
     vertical-align: middle;
     text-align: center;
+    cursor: pointer;
 }
 
 .btn-green {
     background-color: var(--very-dark-cyan);
     color: var(--white);
-    font-weight: 700;;
+    font-weight: 700;
+}
+
+.btn-dull {
+    background-color: var(--light-grayish-cyan2);
+    font-weight: 900;
+    color: var(--dark-grayish-cyan1);
 }
 
 .btn-tip-pct {
     border-radius: 5px;
-    padding: 1em 3em;
+    padding: 0.6em;
 }
 
+button.btn-tip-pct:hover,
+button.btn-reset:hover,
+.btn-active {
+    background-color: var(--light-grayish-cyan1);
+    color: var(--very-dark-cyan);
+}
+
+.btn-reset {
+    background-color: var(--strong-cyan);
+    text-transform: uppercase;
+    font-weight: 700;
+    color: var(--very-dark-cyan);
+    width: 100%;
+    border-radius: 5px;
+    padding: 0.5em 0;
+} 
+
+input.custom-tip {
+    text-align: center;
+}
+
+input.custom-tip:focus {
+    text-align: end;
+}
+
+input.custom-tip:focus::placeholder {
+    color: transparent;
+}
+
+/* bill computation */
+.bill-computation > div {
+    padding: 1em 0;
+}
+
+.bill-computation > div .label-container {
+    padding-bottom: 0.5em;
+}
+
+.bill-computation .label-container label:first-child {
+    flex-grow: 1;
+}
 /* bill total */
 .bill-total {
     background-color: var(--very-dark-cyan);
     border-radius: 15px;
+}
+
+.bill-total-container {
+    padding: 1.5em;
+}
+
+.bill-total .label-container span {
+    display: block;
+    font-size: 16px;
+}
+
+.bill-total .label-container span:first-child {
+    color: var(--white);
+}
+
+.bill-total .label-container span:nth-child(2) {
+    color: var(--dark-grayish-cyan2);
+}
+
+.bill-total h2 {
+    font-size: 2.5em;
+    color: var(--strong-cyan);
+}
+
+.amount-container {
+    align-items: center;
+    justify-content: center;
+    margin: 0.5em 0;
+}
+
+.amount-container > .label-container {
+    flex-grow: 1;
+}
+
+.button-reset-container {
+    padding-top: 5em;
+}
+
+
+
+
+
+
+
+
+
+/* Chrome, Safari, Edge, Opera */
+/* removes spinner */
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+/* Firefox */
+input[type=number] {
+  -moz-appearance: textfield;
 }
