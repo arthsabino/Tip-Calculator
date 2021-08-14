@@ -3,7 +3,7 @@
 :root {
     --font-size: 24px;
     --mobile-width: 375px;
-    --desktop-width: 1440px;
+    --desktop-width: 850px;
     --strong-cyan: hsl(172, 67%, 45%);
     --very-dark-cyan: hsl(183, 100%, 15%);
     --dark-grayish-cyan1: hsl(186, 14%, 43%);
@@ -48,16 +48,17 @@ body {
 
 .flex-container {
     display: flex;
+    flex-wrap: wrap;
+}
+
+.card-body {
+    padding: 0.5em;
 }
 
 .card-body.flex-container > div {
     flex: 1;
-    margin: 0 1.5em;
-    padding: 0 0.5em;
-}
-
-.bill-total-container {
-    width: 580px;
+    margin: 0.5em;
+    padding: 0.5em;
 }
 
 .input-error-message {
@@ -82,10 +83,6 @@ label {
     background-color: var(--white);
     border-radius: 15px;
     margin-top: 3em;
-}
-
-.card-body {
-    padding: 1em;
 }
 
 .form-group input {
@@ -187,7 +184,7 @@ input.custom-tip:focus::placeholder {
 }
 
 .bill-total-container {
-    padding: 1.5em;
+    padding: 0.3em;
 }
 
 .bill-total .label-container span {
@@ -204,7 +201,7 @@ input.custom-tip:focus::placeholder {
 }
 
 .bill-total h2 {
-    font-size: 2.5em;
+    font-size: 1.65em;
     color: var(--strong-cyan);
 }
 
@@ -222,14 +219,6 @@ input.custom-tip:focus::placeholder {
     padding-top: 5em;
 }
 
-
-
-
-
-
-
-
-
 /* Chrome, Safari, Edge, Opera */
 /* removes spinner */
 input::-webkit-outer-spin-button,
@@ -241,4 +230,13 @@ input::-webkit-inner-spin-button {
 /* Firefox */
 input[type=number] {
   -moz-appearance: textfield;
+}
+
+@media only screen and (max-width: 375px) {
+    .card-container {
+        width: 325px;
+    }
+    .grid-container.button-container {
+        grid-template-columns: repeat(2, 50%);
+    }
 }
